@@ -1,0 +1,78 @@
+{
+  "name": "Ahorcado - El Juego de Palabras",
+  "short_name": "Ahorcado",
+  "description": "Juego clásico del ahorcado. Adivina la palabra antes de que se complete el dibujo.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#667eea",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "es",
+  "categories": ["games", "entertainment", "puzzle"],
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><defs><linearGradient id='bg1' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%23667eea'/><stop offset='100%' stop-color='%23764ba2'/></linearGradient></defs><rect width='192' height='192' fill='url(%23bg1)' rx='48'/><rect x='20' y='20' width='152' height='152' fill='%23C0C3D0' rx='20'/><rect x='30' y='30' width='132' height='132' fill='%23E2E8F0' rx='10'/><g transform='translate(96,96)'><rect x='-40' y='-50' width='8' height='80' fill='%234A5568'/><rect x='-40' y='-50' width='60' height='8' fill='%234A5568'/><rect x='12' y='-50' width='8' height='20' fill='%234A5568'/><circle cx='16' cy='-20' r='12' fill='%232563eb'/><rect x='12' y='-8' width='8' height='30' fill='%234A5568'/><rect x='0' y='0' width='16' height='8' fill='%234A5568'/><rect x='24' y='0' width='16' height='8' fill='%234A5568'/><rect x='8' y='22' width='8' height='20' fill='%234A5568'/><rect x='20' y='22' width='8' height='20' fill='%234A5568'/><rect x='-50' y='30' width='120' height='8' fill='%234A5568'/></g></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><defs><linearGradient id='bg2' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%23667eea'/><stop offset='50%' stop-color='%236c7df7'/><stop offset='100%' stop-color='%23764ba2'/></linearGradient><filter id='shadow'><feDropShadow dx='0' dy='8' stdDeviation='16' flood-color='%23000000' flood-opacity='0.2'/></filter></defs><rect width='512' height='512' fill='url(%23bg2)' rx='128'/><rect x='50' y='50' width='412' height='412' fill='%23C0C3D0' rx='50' filter='url(%23shadow)'/><rect x='80' y='80' width='352' height='352' fill='%23E2E8F0' rx='25'/><g transform='translate(256,256)' filter='url(%23shadow)'><rect x='-100' y='-130' width='20' height='200' fill='%234A5568'/><rect x='-100' y='-130' width='160' height='20' fill='%234A5568'/><rect x='40' y='-130' width='20' height='50' fill='%234A5568'/><circle cx='50' cy='-60' r='30' fill='%232563eb'/><rect x='40' y='-30' width='20' height='80' fill='%234A5568'/><rect x='20' y='-10' width='40' height='20' fill='%234A5568'/><rect x='70' y='-10' width='40' height='20' fill='%234A5568'/><rect x='35' y='50' width='20' height='50' fill='%234A5568'/><rect x='55' y='50' width='20' height='50' fill='%234A5568'/><rect x='-120' y='70' width='320' height='20' fill='%234A5568'/></g><text x='256' y='450' font-size='48' text-anchor='middle' fill='%23ffffff' font-weight='bold'>AHORCADO</text></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 144 144'><defs><linearGradient id='bg3' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%23667eea'/><stop offset='100%' stop-color='%23764ba2'/></linearGradient></defs><rect width='144' height='144' fill='url(%23bg3)' rx='36'/><rect x='15' y='15' width='114' height='114' fill='%23C0C3D0' rx='15'/><rect x='22' y='22' width='100' height='100' fill='%23E2E8F0' rx='8'/><g transform='translate(72,72)'><rect x='-30' y='-38' width='6' height='60' fill='%234A5568'/><rect x='-30' y='-38' width='45' height='6' fill='%234A5568'/><rect x='9' y='-38' width='6' height='15' fill='%234A5568'/><circle cx='12' cy='-15' r='9' fill='%232563eb'/><rect x='9' y='-6' width='6' height='24' fill='%234A5568'/><rect x='3' y='2' width='12' height='6' fill='%234A5568'/><rect x='18' y='2' width='12' height='6' fill='%234A5568'/><rect x='6' y='18' width='6' height='15' fill='%234A5568'/><rect x='15' y='18' width='6' height='15' fill='%234A5568'/><rect x='-36' y='22' width='90' height='6' fill='%234A5568'/></g></svg>",
+      "sizes": "144x144",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 72'><defs><linearGradient id='bg4' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%23667eea'/><stop offset='100%' stop-color='%23764ba2'/></linearGradient></defs><rect width='72' height='72' fill='url(%23bg4)' rx='18'/><rect x='8' y='8' width='56' height='56' fill='%23C0C3D0' rx='8'/><rect x='12' y='12' width='48' height='48' fill='%23E2E8F0' rx='4'/><g transform='translate(36,36)'><rect x='-15' y='-19' width='3' height='30' fill='%234A5568'/><rect x='-15' y='-19' width='22' height='3' fill='%234A5568'/><rect x='4' y='-19' width='3' height='8' fill='%234A5568'/><circle cx='5.5' cy='-8' r='4' fill='%232563eb'/><rect x='4' y='-4' width='3' height='12' fill='%234A5568'/><rect x='1' y='0' width='6' height='3' fill='%234A5568'/><rect x='8' y='0' width='6' height='3' fill='%234A5568'/><rect x='2' y='8' width='3' height='8' fill='%234A5568'/><rect x='7' y='8' width='3' height='8' fill='%234A5568'/><rect x='-18' y='11' width='45' height='3' fill='%234A5568'/></g></svg>",
+      "sizes": "72x72",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><defs><linearGradient id='bg5' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%23667eea'/><stop offset='100%' stop-color='%23764ba2'/></linearGradient></defs><rect width='48' height='48' fill='url(%23bg5)' rx='12'/><rect x='5' y='5' width='38' height='38' fill='%23C0C3D0' rx='5'/><rect x='8' y='8' width='32' height='32' fill='%23E2E8F0' rx='3'/><g transform='translate(24,24)'><rect x='-10' y='-12' width='2' height='20' fill='%234A5568'/><rect x='-10' y='-12' width='15' height='2' fill='%234A5568'/><rect x='3' y='-12' width='2' height='5' fill='%234A5568'/><circle cx='4' cy='-5' r='3' fill='%232563eb'/><rect x='3' y='-2' width='2' height='8' fill='%234A5568'/><rect x='1' y='1' width='4' height='2' fill='%234A5568'/><rect x='6' y='1' width='4' height='2' fill='%234A5568'/><rect x='2' y='6' width='2' height='5' fill='%234A5568'/><rect x='5' y='6' width='2' height='5' fill='%234A5568'/><rect x='-12' y='8' width='30' height='2' fill='%234A5568'/></g></svg>",
+      "sizes": "48x48",
+      "type": "image/svg+xml"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Nuevo Juego",
+      "short_name": "Jugar",
+      "description": "Comenzar una nueva partida",
+      "url": "/?new=true",
+      "icons": [
+        {
+          "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'><rect width='96' height='96' fill='%2300b894' rx='20'/><text x='48' y='65' font-size='40' text-anchor='middle' fill='white'>🎮</text></svg>",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Estadísticas",
+      "short_name": "Stats",
+      "description": "Ver puntuación y estadísticas",
+      "url": "/?stats=true",
+      "icons": [
+        {
+          "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'><rect width='96' height='96' fill='%23fdcb6e' rx='20'/><text x='48' y='65' font-size='40' text-anchor='middle' fill='white'>📊</text></svg>",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 540 720'><defs><linearGradient id='screen1' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%23667eea'/><stop offset='100%' stop-color='%23764ba2'/></linearGradient></defs><rect width='540' height='720' fill='url(%23screen1)'/><rect x='20' y='60' width='500' height='600' fill='rgba(255,255,255,0.1)' rx='20'/><text x='270' y='120' font-size='36' text-anchor='middle' fill='white' font-weight='bold'>🎯 AHORCADO</text><rect x='60' y='160' width='420' height='120' fill='rgba(0,0,0,0.3)' rx='10'/><text x='270' y='200' font-size='14' text-anchor='middle' fill='white' font-family='monospace'>  ___</text><text x='270' y='220' font-size='14' text-anchor='middle' fill='white' font-family='monospace'>  |  |</text><text x='270' y='240' font-size='14' text-anchor='middle' fill='white' font-family='monospace'>  |  😵</text><text x='270' y='300' font-size='24' text-anchor='middle' fill='white' font-weight='bold'>P R O G R A M A R</text><rect x='60' y='350' width='420' height='200' fill='rgba(255,255,255,0.1)' rx='10'/><text x='270' y='380' font-size='12' text-anchor='middle' fill='white'>A B C D E F G H I</text><text x='270' y='410' font-size='12' text-anchor='middle' fill='white'>J K L M N O P Q R</text><text x='270' y='440' font-size='12' text-anchor='middle' fill='white'>S T U V W X Y Z</text><rect x='160' y='580' width='220' height='40' fill='%23ff6b6b' rx='20'/><text x='270' y='605' font-size='16' text-anchor='middle' fill='white' font-weight='bold'>Nuevo Juego</text></svg>",
+      "sizes": "540x720",
+      "type": "image/svg+xml",
+      "form_factor": "narrow"
+    }
+  ]
+}
