@@ -7,9 +7,17 @@
     
     <!-- PWA Meta Tags -->
     <meta name="description" content="Juego del ahorcado - Adivina la palabra">
-    <meta name="theme-color" content="#2563eb">
+    <meta name="theme-color" content="#667eea">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Ahorcado">
+    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIkFob3JjYWRvIC0gSnVlZ28gZGUgUGFsYWJyYXMiLAogICJzaG9ydF9uYW1lIjogIkFob3JjYWRvIiwKICAiZGVzY3JpcHRpb24iOiAiSnVlZ28gZGVsIGFob3JjYWRvIC0gQWRpdmluYSBsYSBwYWxhYnJhIiwKICAic3RhcnRfdXJsIjogIi4vIiwKICAiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwKICAiYmFja2dyb3VuZF9jb2xvciI6ICIjNjY3ZWVhIiwKICAidGhlbWVfY29sb3IiOiAiIzY2N2VlYSIsCiAgIm9yaWVudGF0aW9uIjogInBvcnRyYWl0IiwKICAiaWNvbnMiOiBbCiAgICB7CiAgICAgICJzcmMiOiAiZGF0YTppbWFnZS9zdmcreG1sO2Jhc2U2NCxQSE4yWnlCNGJXeHVjejBpYUhSMGNEb3ZMM2QzZHk1M00yNXZjbWN2TWpBd01DOXpkbWNpSUhkcFpIUm9QU0l4TWpnaUlHaGxhV2RvZEQwaU1USTRJajRLSUNBOFpHVm1jejRLSUNBZ0lDQThiR2x1WldGeVIzSmhaR2xsYm5RZ2FXUTlJbU5sYm5SbGNrZHlaV1Y0SWo0S0lDQWdJQ0FnSUNBZ1BITjBiM0FnYjJabWMyVjBQU0l3SlNJZ2MzUjViR1U5SW5OMGIzQXRZMjlzYjNJNklqWTJOMlZsWVNJZ0x6NEtJQ0FnSUNBZ0lDQWdQSE4wYjNBZ2IyWm1jMlYwUFNJeE1EQWxJaUJ6ZEhsc1pUMGljM1J2Y0MxamIyeHZjam9pSTNjMllXSmhNaUlnTHo0S0lDQWdJQ0E4TDJ4cGJtVmhja2R5WVdScFpXNTBQZ29nSUNBOEwyUmxabk0rQ2lBZ0lEeGpaV2x5WTJ4bElHTjRQU0kyTkNJZ1kza3BJak15SWlCeVBTSTBPQ0lnWm1sc2JEMGlJekkyTVRZeE5pSWdMejRLSUNBOGNtVmpkQ0I0UFNJeU5DSWdlVDBpTWpRaUlIZHBaSFJvUFNJNE1DSWdhR1ZwWjJoMFBTSXlOQ0lnY25nOUlqUWlJR1pwYkd3OUlpWXpPRmM0TmpFeUlpOCtDaUFnUEdOMWNuWmxJR041UFNJMU5TSWdZM2c5SWpVeUlpQmpkakU5SWkweElpQmpkakk5SWkxeElpOCtDaUFnUEd4cGJtVWdlREU5SWpVeUlpQjVNVDBpTnpRaUlIZ3lQU0kxTWlJZ2VUSTlJamd5SWlCemRISnZhMlU5SWlNek9GZzROakV5SWlCemRISnZhMlV0ZDJsa2RHZzlJaklpSUhOMGNtOXJaUzFzYVc1bFkyRndQU0p5YjNWdVpDSWdMejRLSUNBOGJHbHVaU0I0TVQwaU1qWWlJSGt4UFNJeU1DSWdlREk5SWpBd0lpQjVNajBpTWpBaUlITjBjbTlyWlQwaUl6TTRXRGS2TVRJaUlITjBjbTlyWlMxM2FXUjBhRDBpTWlJZ2MzUnliMnRsTFd4cGJtVmpZWEE5SW5KdmRXNWtJaTgrQ2lBZ1BHeHBibVVnZURFOUlqSXlJaUI1TVQwaU5UZ2lJSGd5UFNJeE1EWWlJSGt5UFNJMU9DSWdjM1J5YjJ0bFBTSWpNemhZT0RZeE1pSWdjM1J5YjJ0bExYZHBaSFJvUFNJeUlpQnpkSEp2YTJVdGJHbHVaV05oY0QwaWNtOTFibVFpSUM4K0NpQWdQSEpsWTNRZ2VEMGlNemNpSUhrOUlqVXlJaUIzYVdSMGFEMGlNelFpSUdobGFXZG9kRDBpTWpnaUlISnlQU0kwSWlCbWFXeHNQU0lqTXpoWU9EWXhNaUlnTHo0S0lDQWdQSFJsZUhRZ2VEMGlOVFFpSUhrOUlqWXlJaUIwWlhoMExXRnVZMmh2Y2owaWJXbGtaR3hsSWlCbWFXeHNQU0lqWVdOaE5qa3BJaUJ6ZEhsc1pUMGlabTl1ZEMxbVlXMXBiSGs2SUU5eWNHbHVaMnQwYnpBME5EZzRMVUpsZEZVN0lHWnZiblF0YzJsNlpUb2dNalZ3ZURzaVBnb2dJQ0FnSUNBZ0lDQWdJQ0FnUUVGSklFOVNRMEZFYjE0R3lBOEwzUmxlSFErQ2lBOEwzTjJaejQiLAogICAgICAic2l6ZXMiOiAiMTI4eDEyOCIsCiAgICAgICJ0eXBlIjogImltYWdlL3N2Zyt4bWwiCiAgICB9LAogICAgewogICAgICAic3JjIjogImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjRiVzV6UFNKb2RIUndPaTh2ZDNkM0xuY3piMjVuTG05eVp5OHlNREF3TDNOMlp5SWdkMmxrZEdnOUlqVXhNaUlnYUdWcFoyaDBQU0kxTVRJaVBnb2dJQ0E4WkdWbWN6NEtJQ0FnSUNBOGJHbHVaV0Z5UjNKaFpHbGxiblFnYVdROUltTmxiblJsY2tkeVpXVjRJajRLSUNBZ0lDQWdJQ0FnUEhOMGIzQWdiMlptYzJWMFBTSXdKU0lnYzNSNWJHVTlJbk4wYjNBdFkyOXNiM0k2SWpZMk4yVmxZU0lnTHo0S0lDQWdJQ0FnSUNBZ1BITjBiM0FnYjJabWMyVjBQU0l4TURBbElpQnpkSGxzWlQwaWMzUnZjQzFqYjJ4dmNqb2lJemRpTkdKaE1pSWdMejRLSUNBZ0lDQThMMnhwYm1WaGNrZHlZV1JwWlc1MFBnb2dJQ0E4TDJSbFpuTStDaUFnSUR4alpXbHlZMnhsSUdONFBTSXlOVFlpSUdONVBTSXlOVFlpSUhJOUlqSXdNQ0lnWm1sc2JEMGlJelpqTmpoQk5UTWlJQzgrQ2lBZ1BISmxZM1FnZUQwaU9UWWlJSGs5SWprMklpQjNhV1IwYUQwaU16STFJaUJvWldsbmFIUTlJakkrTnlJZ2NuZzlJakU0SWlCbWFXeHNQU0lqTTFjMU1FaGZKVTRrSWk4K0NpQWdQSE4yWnlCNFBTSXlNVFlpSUhrOUlqRXlPQ0lnZDJsa2RHZzlJakV4TUNJZ2FHVnBaMmgwUFNJd01USXdJaUIySWpoa2NHVjZRMm8zTGlBa1YyVjRXQ1UwVTBKQllpTXZkR0Z1Y1Y5d01ITnlMQ1E1WEMxelp6azROejRLSUNBZ0lEeG5QZ29nSUNBZ0lDQWdJRHh3WVhSb0lHUTlJazB5TXpSQk5EVWdNamcxZFRNeExUWXpMaXc1Tmk0M0xUTXVNeXd4TnpNdU5DMDNMMkF5TnpNdU1pdzRNeTV4TlM0cExURTVMaXgxTUMweExtMUNkakY2SWk4K0NpQWdJQ0FnUEM5blBnb2dJQ0E4TDNOMlp6NEtJQ0E4WTJSM2JHRjBZVDhrUENSell5QWdhUzVrYjNkc2JtOWhab3hoYVdZZ1BDOWtjejRpSUc5eWFXZHBiajBpYUhSMGNITTZMeTlqUEdOa2JFQXBRQ1F4TGk1amIyMGlJRDQ4TDJNaWVIZHRPaUI4U1VJd016azBTVDlpSWk4K0NpQWdQR3hwYm1VZ2VERTlJalk0SWlCNU1UMGlNVFl3SWlCNE1qMGlNekE0SWlCNU1qMGlNVFl3SWlCemRISnZhMlU5SWlNek9GZzROakV5SWlCemRISnZhMlV0ZDJsa2RHZzlJaklpSUhOMGNtOXJaUzFzYVc1bFkyRndQU0p5YjNWdVpTSWdMejRLSUNBOGJHbHVaU0I0TVQwaU5qZ2lJSGt4UFNJNE1DSWdlREk5SWpNd09DSWdlVEk5SWpnd0lpQnpkSEp2YTJVOUlpTXpPRmc0TmpFeUlpQnpkSEp2YTJVdGQybGtkR2c5SWpJaUlITjBjbTlyWlMxc2FXNWxZMkZ3UFNKeWIzVnVaU0lnTHo0S0lDQWdQR055YVdObGJHVWdZM2c5SWpFMU5pSWdZM2s5SWpFd01DSWdjajBpTlRZaUlHWnBiR3c5SXpNeFJEZ3pRbXg4Y3pBdE5rZytJR0Y2SXlkdVRHYUtTa2xMYUZCNllqaDVXV1JhZFhWQlkyZzNjMlFnTDJOcGNtTnNaVDRLSUNBOGNtVmpkQ0I0UFNJMk5DSWdlVDBpTVRJNElpQjNhV1IwYUQwaU5UUWlJR2hsYVdkb2REMGlOVFFpSUhKNFBTSXlJaUJtYVd4c1BTSWpNRGhrT1Mxa1NVNXVkR0Z5YVc1ZjBJSU5EWWlJeTgrQ2lBZ1BISmxZM1FnZUQwaU1qUXJJR01nUUQwaU5qUWlJSGM5SWpRNElpQm9QU0l4TmpBaUlISnlQU0k0SWlCbWFXeHNQU0lqTXpoWU9EWXhNaUlnTHo0S0lDQWdQSFJsZUhRZ2VEMGlORGNpSUhrOUlqUWlJSFJsZUhRdFlXNWphRzl5UFNKdGFXUmtiR1VpSUdacGJHeGJPRmxJVUhSZkk5b2NIdDZjWGRJVGcxODhjM1I1YkdVOUltWnZiblF0Wm1GdGFXeDVPaUIwUVVOa1kzb25LZHdOWHBRWnQzQnhPaUJtYjI1MExYTnBlbVU2SWpRd2NIZ2lQZ29nSUNBZ0lDQWdJQ0FnSUNBZ1FVaFNRMEZRYjE1eUxqQThMMlJsZUhRK0NqNE5oSzBZUVNoUHZObE4va2c3N3c9PSIsCiAgICAgICJzaXplcyI6ICI1MTJ4NTEyIiwKICAqInR5cGUiOiAiaW1hZ2Uvc3ZnK3htbCIKICAgIH0KICBdCn0=">
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxODAiIGhlaWdodD0iMTgwIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iY2VudGVyR3JlZXgiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojNjY3ZWVhIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiM3NjRiYTIiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8Y2lyY2xlIGN4PSI5MCIgY3k9IjkwIiByPSI5MCIgZmlsbD0idXJsKCNjZW50ZXJHcmVleCkiLz4KICA8cmVjdCB4PSI0NSIgeT0iNDUiIHdpZHRoPSI5MCIgaGVpZ2h0PSI5MCIgcng9IjEwIiBmaWxsPSIjMzhXODYxMiIvPgogIDx0ZXh0IHg9IjkwIiB5PSIxMTAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNhY2E2YzkiIHN0eWxlPSJmb250LWZhbWlseTogT3JwaW5ndG9uLUJldFU7IGZvbnQtc2l6ZTogNDBweDsiPkE8L3RleHQ+Cjwvc3ZnPg==" sizes="180x180">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCI+CiAgPGNpcmNsZSBjeD0iMzIiIGN5PSIzMiIgcj0iMzIiIGZpbGw9IiM2NjdlZWEiLz4KICA8dGV4dCB4PSIzMiIgeT0iNDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBzdHlsZT0iZm9udC1mYW1pbHk6IEFyaWFsOyBmb250LXNpemU6IDI0cHg7IGZvbnQtd2VpZ2h0OiBib2xkIj5BPC90ZXh0Pgo8L3N2Zz4=">
     
     <style>
         * {
@@ -484,12 +492,114 @@
         // Inicializar cuando carga la página
         window.onload = initGame;
 
+        // Service Worker básico para PWA
+        const swCode = `
+            const CACHE_NAME = 'ahorcado-v1';
+            const urlsToCache = [
+                './',
+            ];
+            
+            self.addEventListener('install', event => {
+                event.waitUntil(
+                    caches.open(CACHE_NAME)
+                        .then(cache => cache.addAll(urlsToCache))
+                );
+            });
+            
+            self.addEventListener('fetch', event => {
+                event.respondWith(
+                    caches.match(event.request)
+                        .then(response => response || fetch(event.request))
+                );
+            });
+        `;
+        
         // Registrar Service Worker si está disponible
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('data:text/javascript,console.log("SW placeholder")')
-                    .catch(error => console.log('SW no disponible'));
+                const blob = new Blob([swCode], { type: 'application/javascript' });
+                const swUrl = URL.createObjectURL(blob);
+                
+                navigator.serviceWorker.register(swUrl)
+                    .then(registration => {
+                        console.log('SW registrado:', registration.scope);
+                        
+                        // Mostrar prompt de instalación después de un momento
+                        setTimeout(() => {
+                            if (!window.matchMedia('(display-mode: standalone)').matches) {
+                                showInstallPrompt();
+                            }
+                        }, 3000);
+                    })
+                    .catch(error => console.log('SW falló:', error));
             });
+        }
+        
+        // Manejar el evento beforeinstallprompt
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            showInstallPrompt();
+        });
+        
+        // Mostrar prompt de instalación
+        function showInstallPrompt() {
+            if (deferredPrompt && !localStorage.getItem('installPromptShown')) {
+                const installDiv = document.createElement('div');
+                installDiv.style.cssText = `
+                    position: fixed;
+                    bottom: 20px;
+                    left: 20px;
+                    right: 20px;
+                    background: rgba(0,0,0,0.9);
+                    color: white;
+                    padding: 15px;
+                    border-radius: 10px;
+                    text-align: center;
+                    z-index: 1000;
+                    font-size: 14px;
+                `;
+                installDiv.innerHTML = `
+                    <div style="margin-bottom: 10px;">📱 ¡Instala Ahorcado en tu celular!</div>
+                    <button onclick="installApp()" style="background: #667eea; border: none; color: white; padding: 8px 15px; border-radius: 5px; margin-right: 10px;">Instalar</button>
+                    <button onclick="dismissInstall()" style="background: transparent; border: 1px solid white; color: white; padding: 8px 15px; border-radius: 5px;">Más tarde</button>
+                `;
+                
+                document.body.appendChild(installDiv);
+                window.installDiv = installDiv;
+            }
+        }
+        
+        // Instalar app
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('Usuario aceptó la instalación');
+                        vibrate([200, 100, 200]);
+                    }
+                    deferredPrompt = null;
+                    dismissInstall();
+                });
+            }
+        }
+        
+        // Descartar instalación
+        function dismissInstall() {
+            if (window.installDiv) {
+                window.installDiv.remove();
+                localStorage.setItem('installPromptShown', 'true');
+            }
+        }
+        
+        // Hacer funciones globales
+        window.installApp = installApp;
+        window.dismissInstall = dismissInstall;
+    </script>
+</body>
+</html>
         }
     </script>
 </body>
