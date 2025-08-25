@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahorcado</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="description" content="Juego del ahorcado - Adivina la palabra">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hangman-display {
+            font-family: monospace;
+            font-size: 1.5rem;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            white-space: pre-line;
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .word-display {
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 0.3em;
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+        }
+
+        .alphabet {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+            gap: 5px;
+            margin: 20px 0;
+        }
+
+        .letter-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .letter-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+
+        .letter-btn:disabled {
+            background: rgba(255, 0, 0, 0.3);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .letter-btn.correct {
+            background: rgba(0, 255, 0, 0.3);
+        }
+
+        .game-info {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            font-size: 1.1rem;
+        }
+
+        .new-game-btn {
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .new-game-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .message {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 15px 0;
+            padding: 10px;
+            border-radius: 10px;
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .win {
+            background: rgba(0, 255, 0, 0.2);
+            color: #90EE90;
+        }
+
+        .lose {
+            background: rgba(255, 0, 0, 0.2);
+            color: #FFB6C1;
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .word-display {
+                font-size: 1.5rem;
+            }
+            
+            .alphabet {
+                grid-template-columns: repeat(6, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 AHORCADO</h1>
+        
+        <div class="hangman-display" id="hangmanDisplay"></div>
+        
+        <div class="word-display" id="wordDisplay"></div>
+        
+        <div class="game-info">
+            <div>Errores: <span id="errors">0</span>/6</div>
+            <div>Puntuación: <span id="score">0</span></div>
+        </div>
+        
+        <div class="alphabet" id="alphabet"></div>
+        
+        <div class="message" id="message"></div>
+        
+        <button class="new-game-btn" onclick="newGame()">Nuevo Juego</button>
+    </div>
+
+    <script>
+        // Lista de palabras
+        const words = [
+            'JAVASCRIPT', 'PYTHON', 'PROGRAMAR', 'COMPUTADORA', 'INTERNET',
+            'DESARROLLO', 'APLICACION', 'TECNOLOGIA', 'SOFTWARE', 'HARDWARE',
+            'ALGORITMO', 'VARIABLE', 'FUNCION', 'OBJETO', 'CLASE',
+            'AVENTURA', 'MONTAÑA', 'OCEANO', 'LIBERTAD', 'FELICIDAD',
+            'AMISTAD', 'FAMILIA', 'TRABAJO', 'ESTUDIO', 'MUSICA',
+            'DEPORTE', 'VIAJE', 'CULTURA', 'HISTORIA', 'CIENCIA'
+        ];
+
+        // Estados del juego
+        let currentWord = '';
+        let guessedWord = [];
+        let wrongGuesses = 0;
+        let gameOver = false;
+        let score = 0;
+
+        // Dibujos del ahorcado
+        const hangmanParts = [
+            '',
+            '  ___\n  |  |\n  |\n  |\n  |\n__|__',
+            '  ___\n  |  |\n  |  😵\n  |\n  |\n__|__',
+            '  ___\n  |  |\n  |  😵\n  |  |\n  |\n__|__',
+            '  ___\n  |  |\n  |  😵\n  | /|\n  |\n__|__',
+            '  ___\n  |  |\n  |  😵\n  | /|\\\n  |\n__|__',
+            '  ___\n  |  |\n  |  😵\n  | /|\\\n  | /\n__|__',
+            '  ___\n  |  |\n  |  😵\n  | /|\\\n  | / \\\n__|__'
+        ];
+
+        // Registrar Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(registration => console.log('SW registrado'))
+                    .catch(error => console.log('SW falló'));
+            });
+        }
+
+        // Inicializar juego
+        function initGame() {
+            createAlphabet();
+            newGame();
+            updateScore();
+        }
+
+        // Crear alfabeto
+        function createAlphabet() {
+            const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            const alphabetDiv = document.getElementById('alphabet');
+            alphabetDiv.innerHTML = '';
+            
+            for (let letter of alphabet) {
+                const btn = document.createElement('button');
+                btn.className = 'letter-btn';
+                btn.textContent = letter;
+                btn.onclick = () => guessLetter(letter, btn);
+                alphabetDiv.appendChild(btn);
+            }
+        }
+
+        // Nuevo juego
+        function newGame() {
+            currentWord = words[Math.floor(Math.random() * words.length)];
+            guessedWord = Array(currentWord.length).fill('_');
+            wrongGuesses = 0;
+            gameOver = false;
+            
+            updateDisplay();
+            updateHangman();
+            resetAlphabet();
+            document.getElementById('message').textContent = '';
+            document.getElementById('message').className = 'message';
+        }
+
+        // Adivinar letra
+        function guessLetter(letter, btn) {
+            if (gameOver || btn.disabled) return;
+            
+            btn.disabled = true;
+            
+            if (currentWord.includes(letter)) {
+                // Letra correcta
+                btn.classList.add('correct');
+                for (let i = 0; i < currentWord.length; i++) {
+                    if (currentWord[i] === letter) {
+                        guessedWord[i] = letter;
+                    }
+                }
+                
+                // Verificar si ganó
+                if (!guessedWord.includes('_')) {
+                    gameOver = true;
+                    score += 10;
+                    updateScore();
+                    showMessage('¡GANASTE! 🎉', 'win');
+                }
+            } else {
+                // Letra incorrecta
+                wrongGuesses++;
+                updateHangman();
+                
+                // Verificar si perdió
+                if (wrongGuesses >= 6) {
+                    gameOver = true;
+                    showMessage(`PERDISTE 😔 La palabra era: ${currentWord}`, 'lose');
+                    revealWord();
+                }
+            }
+            
+            updateDisplay();
+        }
+
+        // Actualizar pantalla
+        function updateDisplay() {
+            document.getElementById('wordDisplay').textContent = guessedWord.join(' ');
+            document.getElementById('errors').textContent = wrongGuesses;
+        }
+
+        // Actualizar dibujo del ahorcado
+        function updateHangman() {
+            document.getElementById('hangmanDisplay').textContent = hangmanParts[wrongGuesses];
+        }
+
+        // Mostrar mensaje
+        function showMessage(text, type) {
+            const messageDiv = document.getElementById('message');
+            messageDiv.textContent = text;
+            messageDiv.className = `message ${type}`;
+        }
+
+        // Revelar palabra completa
+        function revealWord() {
+            guessedWord = currentWord.split('');
+            updateDisplay();
+        }
+
+        // Resetear alfabeto
+        function resetAlphabet() {
+            const buttons = document.querySelectorAll('.letter-btn');
+            buttons.forEach(btn => {
+                btn.disabled = false;
+                btn.classList.remove('correct');
+            });
+        }
+
+        // Actualizar puntuación
+        function updateScore() {
+            document.getElementById('score').textContent = score;
+        }
+
+        // Control por teclado
+        document.addEventListener('keydown', (e) => {
+            const letter = e.key.toUpperCase();
+            if (letter >= 'A' && letter <= 'Z') {
+                const btn = Array.from(document.querySelectorAll('.letter-btn'))
+                    .find(b => b.textContent === letter);
+                if (btn && !btn.disabled) {
+                    guessLetter(letter, btn);
+                }
+            }
+        });
+
+        // Inicializar cuando carga la página
+        window.onload = initGame;
+    </script>
+</body>
+</html>
